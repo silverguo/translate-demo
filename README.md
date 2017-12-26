@@ -1,2 +1,2 @@
 # translate-demo
-demo for machine translation
+local demo for machine translation
