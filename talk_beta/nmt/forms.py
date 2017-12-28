@@ -2,10 +2,13 @@ from django import forms
 from .models import Translate
 
 class TranslateForm(forms.ModelForm):
-    lang_src = forms.ChoiceField(choices=((1, 'French'), (2, 'English'),),
+    lang_src = forms.ChoiceField(choices=((1, 'English'), (2, 'French'),),
                                  widget=forms.Select(attrs={'class':'btn-default'}), 
                                  required=True)
     lang_tgt = forms.ChoiceField(choices=((1, 'English'), (2, 'French'),),
+                                 widget=forms.Select(attrs={'class':'btn-default'}), 
+                                 required=True)
+    model_id = forms.ChoiceField(choices=((1, '1'), (2, '2'), (3, '3'),),
                                  widget=forms.Select(attrs={'class':'btn-default'}), 
                                  required=True)
     record_src = forms.CharField(label='Source sentence', 
@@ -19,4 +22,4 @@ class TranslateForm(forms.ModelForm):
 
     class Meta:
         model = Translate
-        fields = ['lang_src', 'lang_tgt', 'record_src', 'record_tgt']
+        fields = ['lang_src', 'lang_tgt', 'model_id', 'record_src', 'record_tgt']
