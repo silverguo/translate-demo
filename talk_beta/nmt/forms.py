@@ -2,10 +2,10 @@ from django import forms
 from .models import Translate
 
 class TranslateForm(forms.ModelForm):
-    lang_src = forms.ChoiceField(choices=((1, 'English'), (2, 'French'),),
+    lang_src = forms.ChoiceField(choices=(('en', 'English'), ('fr', 'French'),),
                                  widget=forms.Select(attrs={'class':'btn-default'}), 
                                  required=True)
-    lang_tgt = forms.ChoiceField(choices=((1, 'English'), (2, 'French'),),
+    lang_tgt = forms.ChoiceField(choices=(('en', 'English'), ('fr', 'French'),),
                                  widget=forms.Select(attrs={'class':'btn-default'}), 
                                  required=True)
     model_id = forms.ChoiceField(choices=((1, '1'), (2, '2'), (3, '3'),),
